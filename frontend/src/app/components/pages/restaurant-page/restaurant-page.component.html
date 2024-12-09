@@ -1,0 +1,52 @@
+<app-not-found
+  [visible]="!restaurant"
+  notFoundMessage="Food Not Found"
+  resetLinkText="Back To Homepage">
+</app-not-found>
+<div *ngIf="restaurant" class="container">
+  <img [src]="restaurant.imageUrl" [alt]="restaurant.name"/>
+
+  <div class="details">
+    <div class="header">
+      <span class="name">
+        {{restaurant.name}}
+      </span>
+      <span class="favorite ">❤</span>
+    </div>
+    <div>
+        <span>
+            {{restaurant.description}}
+        </span>
+    </div>
+    <div class="rating">
+      <star-rating [stars]="restaurant.stars" [size]="1.8" />
+    </div>
+
+    <div class="origins">
+      <h4 style="display: inline-block; margin-right: 20px;">Contact:</h4>
+      <span>
+        {{restaurant.contact}}
+      </span>
+    </div>
+
+    <div class="tags">
+      <a *ngFor="let tag of restaurant.tags" routerLink="/tag/{{tag}}">
+        {{tag}}
+      </a>
+    </div>
+
+    <div class="review">
+      Reviews: 
+      <div *ngFor="let review of restaurant.reviews" class="review-item">
+        <strong>Rating:</strong> {{ review.rating }}<br>
+        <strong>Nickname:</strong> {{ review.nickname }}<br>
+        <strong>Text:</strong> {{ review.text }}<br>
+        <strong>Email:</strong> {{ review.mail }}<br>
+      </div>
+    </div>
+
+    <!--<button (click)="addToCart()">Opinion</button>-->
+    <button [routerLink]="['/review', restaurant.id]">Review</button>
+
+  </div>
+</div>

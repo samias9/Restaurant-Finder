@@ -1,0 +1,33 @@
+<app-search></app-search>
+<app-tags></app-tags>
+<app-not-found
+[visible]="!restaurants || !restaurants.length"
+resetLinkText="Reset Search">
+</app-not-found>
+<ul>
+  <li *ngFor="let restaurant of restaurants">
+    <a routerLink="/restaurant/{{restaurant.id}}">
+      <img [src]="restaurant.imageUrl" [alt]="restaurant.name" />
+      <div class="content">
+        <div class="name">
+          {{restaurant.name}}
+        </div>
+        <div class="stars">
+          <star-rating [stars]="restaurant.stars" />
+        </div>
+        <div class="product-item-footer">
+          <div class="origins">
+            <span >
+              {{restaurant.description}}
+            </span>
+          </div>
+
+          <div class="cook-time">
+            <span>🕒</span>
+            {{restaurant.contact}}
+          </div>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>
