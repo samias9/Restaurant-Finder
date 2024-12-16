@@ -10,26 +10,39 @@ import { Restaurant } from 'src/app/shared/models/Restaurant';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-restaurants: Restaurant[] = [];
-  constructor(private restaurantservice: RestaurantService, activatedRoute: ActivatedRoute) {
-    let restaurantsObservalbe:Observable<Restaurant[]>;
-    activatedRoute.params.subscribe((params) => {
-      if (params.searchTerm){
-        restaurantsObservalbe = this.restaurantservice.getAllRestaurantsBySearchTerm(params.searchTerm);
-      }
-      else if (params.tag)
-        restaurantsObservalbe = this.restaurantservice.getAllRestaurantsByTag(params.tag);
-      else{
-        restaurantsObservalbe=restaurantservice.getAll();
+  restaurants: Restaurant[] = [];
 
-        restaurantsObservalbe.subscribe((serverRestaurants) => {
-          this.restaurants = serverRestaurants;
-        })
-      }
-    }
-)
-    }
+  constructor(
+    private restaurantservice: RestaurantService,
+    private activatedRoute: ActivatedRoute
+  ) {}
+
   ngOnInit(): void {
-  }
+    this.activatedRoute.params.subscribe((params) => {
+      console.log('Route Parameters:', params); // vérifier searchTerm ou tag
 
+      let restaurantsObservable: Observable<Restaurant[]>;
+
+      if (params.searchTerm) {
+        // Fetch restaurants based on the search term
+        restaurantsObservable = this.restaurantservice.getAllRestaurantsBySearchTerm(params.searchTerm);
+      } else if (params.tag) {
+        // Fetch restaurants based on the tag
+        restaurantsObservable = this.restaurantservice.getAllRestaurantsByTag(params.tag);
+      } else {
+        // Fetch all restaurants by default
+        restaurantsObservable = this.restaurantservice.getAll();
+      }
+
+      // Subscribe in all cases to update the restaurants array
+      restaurantsObservable.subscribe({
+        next: (serverRestaurants) => {
+          this.restaurants = serverRestaurants;
+        },
+        error: (err) => {
+          console.error('Error fetching restaurants:', err);
+        }
+      });
+    });
+  }
 }

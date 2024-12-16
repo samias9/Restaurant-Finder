@@ -12,7 +12,7 @@ export const sample_restaurants: Restaurant[] = [
     latitude: 48.4284,
     stars: 4.7,
     longitude: -71.0580,
-    tags: ['FastFood', 'Pizza', 'Lunch'],
+    tags: ['café', 'Pizza', 'Lunch'],
     reviews: [
       {
         id: 1,

@@ -18,7 +18,8 @@ export class RestaurantService {
   }
   getAllRestaurantsBySearchTerm(searchTerm: string) {
     return this.http.get<Restaurant[]>(RESTAURANTS_BY_SEARCH_URL + searchTerm);
-  }
+}
+    
   getAllTags(): Observable<Tag[]> {
     return this.http.get<Tag[]>(RESTAURANTS_TAGS_URL);
   }
