@@ -1,5 +1,3 @@
-import { Tag } from '../../frontend/src/app/shared/models/Tag';
-
 export const sample_restaurants: any[] = [
   {
     id: '1',
@@ -10,7 +8,7 @@ export const sample_restaurants: any[] = [
     latitude: 48.4284,
     stars: 4.7,
     longitude: -71.0580,
-    tags: ['café', 'Pizza', 'Lunch'],
+    tags: ['Burger', 'Pizza', 'Lunch'],
     reviews: [
       {
         id: 1,
@@ -156,6 +154,7 @@ export const sample_tags:any[] = [
     { name: 'Hamburger', count: 1 },
     { name: 'Fry', count: 1 },
     { name: 'Soup', count: 1 },
+    {name: 'Burger', count:1}
   ]
 
   export const sample_users: any[] = [

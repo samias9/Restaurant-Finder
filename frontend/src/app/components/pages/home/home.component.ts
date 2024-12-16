@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      console.log('Route Parameters:', params); // vérifier searchTerm ou tag
+      console.log('Route Parameters:', params);
 
       let restaurantsObservable: Observable<Restaurant[]>;
 
@@ -38,11 +38,23 @@ export class HomeComponent implements OnInit {
       restaurantsObservable.subscribe({
         next: (serverRestaurants) => {
           this.restaurants = serverRestaurants;
+          this.calculateAverageStarsForRestaurants();
         },
         error: (err) => {
           console.error('Error fetching restaurants:', err);
         }
       });
+    });
+  }
+  // Méthode pour calculer la moyenne des étoiles pour chaque restaurant
+  calculateAverageStarsForRestaurants(): void {
+    this.restaurants.forEach((restaurant) => {
+      if (restaurant.reviews && restaurant.reviews.length > 0) {
+        const totalStars = restaurant.reviews.reduce((sum, review) => sum + review.rating, 0);
+        restaurant.stars = totalStars / restaurant.reviews.length;
+      } else {
+        restaurant.stars = 0; 
+      }
     });
   }
 }

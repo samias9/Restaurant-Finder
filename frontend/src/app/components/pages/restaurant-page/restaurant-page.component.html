@@ -19,10 +19,10 @@
         </span>
     </div>
     <div class="rating">
-      <star-rating [stars]="restaurant.stars" [size]="1.8" />
-    </div>
+      <star-rating [stars]="restaurant.stars" [size]="1.8"></star-rating>
+    </div>    
 
-    <div class="origins">
+    <div class="contact">
       <h4 style="display: inline-block; margin-right: 20px;">Contact:</h4>
       <span>
         {{restaurant.contact}}
@@ -36,16 +36,30 @@
     </div>
 
     <div class="review">
-      Reviews: 
-      <div *ngFor="let review of restaurant.reviews" class="review-item">
-        <strong>Rating:</strong> {{ review.rating }}<br>
-        <strong>Nickname:</strong> {{ review.nickname }}<br>
-        <strong>Text:</strong> {{ review.text }}<br>
-        <strong>Email:</strong> {{ review.mail }}<br>
+      <h3>Reviews:</h3>
+      <div *ngIf="restaurant.reviews && restaurant.reviews.length > 0; else noReviews">
+        <div *ngFor="let review of paginatedReviews" class="review-item">
+          <strong>Rating:</strong> {{ review.rating }}<br>
+          <strong>Nickname:</strong> {{ review.nickname }}<br>
+          <strong>Text:</strong> {{ review.text }}<br>
+          <strong>Email:</strong> {{ review.mail }}<br>
+        </div>
+    
+        <div class="pagination">
+          <button 
+            *ngFor="let page of [].constructor(totalPages); let i = index" 
+            (click)="changePage(i + 1)"
+            [class.active]="currentPage === i + 1">
+            {{ i + 1 }}
+          </button>
+        </div>
       </div>
+    
+      <ng-template #noReviews>
+        <p>No reviews yet. Be the first to leave one!</p>
+      </ng-template>
     </div>
-
-    <!--<button (click)="addToCart()">Opinion</button>-->
+    
     <button [routerLink]="['/review', restaurant.id]">Review</button>
 
   </div>

@@ -49,13 +49,13 @@
     color: grey;
   }
   
-  .origins{
+  .contact{
     display: flex;
     flex-wrap: wrap;
     margin: 1rem 0;
   }
   
-  .origins span{
+  .contact span{
     padding: 0.5rem;
     font-size: 1.2rem;
     margin: 0.5rem 0.5rem 0.5rem 0;
@@ -117,5 +117,26 @@
   button:hover{
     opacity: 0.9;
     cursor: pointer;
+  }
+  
+  .pagination {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-left: 40%;
+  }
+  
+  .pagination button {
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .pagination button.active {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
   }
   

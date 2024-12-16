@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "restaurantId": "1",
+    "nickname": "samios",
+    "mail": "samiacarchaf2003@gmail.com",
+    "rating": 3,
+    "text": "Cher"
+  },
+  {
+    "id": 2,
+    "restaurantId": "1",
+    "nickname": "nicole",
+    "mail": "nicole@gmail.com",
+    "rating": 5,
+    "text": "Super !"
+  },
+  {
+    "id": 3,
+    "restaurantId": "1",
+    "nickname": "yasmina",
+    "mail": "yasmina@gmail.com",
+    "rating": 1,
+    "text": "Horrible, plus jamais 👎 "
+  },
+  {
+    "id": 4,
+    "restaurantId": "5",
+    "nickname": "samios",
+    "mail": "samia2003@gmail.com",
+    "rating": 1,
+    "text": "Je ne recommende pas ."
+  },
+  {
+    "id": 5,
+    "restaurantId": "5",
+    "nickname": "user",
+    "mail": "user@gmail.com",
+    "rating": 1,
+    "text": "Bof! pas Bon DU TOUT ☠️"
+  },
+  {
+    "id": 6,
+    "restaurantId": "3",
+    "nickname": "Ahmed",
+    "mail": "ahmed@yahoo.fr",
+    "rating": 4,
+    "text": "Pas mal"
+  }
+]
