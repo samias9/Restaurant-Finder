@@ -156,6 +156,6 @@ export const sample_tags:Tag[] = [
     { name: 'Lunch', count: 3 },
     { name: 'SlowFood', count: 2 },
     { name: 'Hamburger', count: 1 },
-    { name: 'Fry', count: 1 },
-    { name: 'Soup', count: 1 },
+    { name: 'Fry', count: 0 },
+    { name: 'Soup', count: 0 },
   ]

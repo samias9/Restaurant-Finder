@@ -4,7 +4,8 @@ Ce projet a été généré avec Angular CLI version 13.1.2.
 
 ## Development server
 
-Exécutez `ng serve` pour lancer un serveur de développement. Rendez-vous sur `http://localhost:4200/`. L'application se rechargera automatiquement si vous modifiez l'un des fichiers sources.
+Frontend: Exécutez `ng serve` pour lancer un serveur de développement. Rendez-vous sur `http://localhost:4200/`. L'application se rechargera automatiquement si vous modifiez l'un des fichiers sources.
+Backend: Exécutez `npm start` pour lancer le backend.
 
 ## Build
 

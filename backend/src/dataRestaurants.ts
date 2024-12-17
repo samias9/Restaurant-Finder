@@ -146,14 +146,13 @@ export const sample_restaurants: any[] = [
 ]
 
 export const sample_tags:any[] = [
-    { name: 'All', count: 6 },
-    { name: 'FastFood', count: 4 },
-    { name: 'Pizza', count: 2 },
-    { name: 'Lunch', count: 3 },
-    { name: 'SlowFood', count: 2 },
-    { name: 'Hamburger', count: 1 },
-    { name: 'Fry', count: 1 },
-    { name: 'Soup', count: 1 },
+    { name: 'All', count: 5 },
+    { name: 'FastFood', count: 3 },
+    { name: 'Pizza', count: 4 },
+    { name: 'Lunch', count: 4 },
+    { name: 'SlowFood', count: 0 },
+    { name: 'Fry', count: 0 },
+    { name: 'Soup', count: 0 },
     {name: 'Burger', count:1}
   ]
 

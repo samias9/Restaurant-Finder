@@ -46,5 +46,13 @@
     "mail": "ahmed@yahoo.fr",
     "rating": 4,
     "text": "Pas mal"
+  },
+  {
+    "id": 7,
+    "restaurantId": "3",
+    "nickname": "samiaTest",
+    "mail": "samia.carchaf@etu.univ-tours.fr",
+    "rating": 2,
+    "text": "Not bad :)"
   }
 ]
